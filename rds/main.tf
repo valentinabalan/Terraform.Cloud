@@ -1,12 +1,14 @@
-data "tfe_outputs" "vpc" {
+data "terraform_remote_state" "vpc" {
+  backend = "remote"
+
   config = {
     organization = "Balan"
     workspaces = {
-      name = "vpc-prod"
+      name = "vpc"
     }
   }
 }
 
 output all {
-    value = data.tfe_outputs.vpc.outputs
+    value = data.terraform_remote_state.vpc.outputs
 }
