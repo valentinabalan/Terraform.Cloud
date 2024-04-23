@@ -9,13 +9,13 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-data "terraform_remote_state" "vpc" {
+data "terraform_remote_state" "rds" {
   backend = "remote"
 
   config = {
     organization = "Balan"
     workspaces = {
-      name = "vpc"
+      name = "rds"
     }
   }
 }
