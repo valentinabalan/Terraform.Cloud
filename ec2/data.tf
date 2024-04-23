@@ -9,6 +9,17 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+data "terraform_remote_state" "vpc" {
+  backend = "remote"
+
+  config = {
+    organization = "Balan"
+    workspaces = {
+      name = "vpc"
+    }
+  }
+}
+
 
 data "aws_ami" "ubuntu" {
   most_recent = true
