@@ -32,6 +32,10 @@ resource "aws_db_instance" "default" {
   db_subnet_group_name = aws_db_subnet_group.default.name
 }
 
+output adress {
+  value = aws_db_instance.default.adress
+}
+
 
 
 
